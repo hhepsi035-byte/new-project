@@ -1,90 +1,110 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Impressive Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Legacy Hub</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+  }
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
+  section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    perspective: 1000px;
+  }
 
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      animation: fadeIn 1.5s ease;
-    }
+  .card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: transform 0.2s;
+    text-align: center;
+    width: 300px;
+  }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    p {
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
+  p {
+    opacity: 0.8;
+  }
 
-    button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      background: white;
-      color: #764ba2;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  .btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }
 
-    button:hover {
-      background: #764ba2;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
+<section>
   <div class="card">
-    <h1>🚀 Welcome</h1>
-    <p>This is your impressive GitHub website</p>
-    <button onclick="showMessage()">Click Me</button>
+    <h1>💀 Digital Legacy Hub</h1>
+    <p>Your digital life shouldn’t die with you.</p>
   </div>
+</section>
 
-  <script>
-    function showMessage() {
-      alert("🔥 You just created a cool website!");
-    }
-  </script>
+<section>
+  <div class="card">
+    <h1>⚠️ The Problem</h1>
+    <p>Families struggle to access lost accounts, photos & assets.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h1>📂 Your Assets</h1>
+    <p>Store passwords, crypto, files & memories securely.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h1>🔐 Secure Vault</h1>
+    <p>Encrypted access for trusted people only.</p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h1>👨‍👩‍👧 Legacy Transfer</h1>
+    <p>Give access when it matters most.</p>
+    <button class="btn" onclick="alert('Coming Soon 🚀')">Get Started</button>
+  </div>
+</section>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+
+  document.addEventListener("mousemove", (e) => {
+    let x = (window.innerWidth / 2 - e.pageX) / 25;
+    let y = (window.innerHeight / 2 - e.pageY) / 25;
+
+    cards.forEach(card => {
+      card.style.transform = rotateY(${x}deg) rotateX(${y}deg);
+    });
+  });
+</script>
 
 </body>
 </html>

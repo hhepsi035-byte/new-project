@@ -14,38 +14,40 @@
 }
 
 body {
-  overflow-x: hidden;
   color: white;
+  overflow-x: hidden;
+  background: black;
 }
 
-/* 🌌 Animated background */
+/* 🌌 SPACE BACKGROUND */
 body::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") no-repeat center/cover;
-  z-index: -2;
-  filter: brightness(0.4);
+  background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa") no-repeat center/cover;
+  z-index: -3;
+  filter: brightness(0.5);
 }
 
+/* 🌟 STARS ANIMATION */
 body::after {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(34,197,94,0.2), transparent 60%);
-  animation: moveBg 20s linear infinite;
-  z-index: -1;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: stars 60s linear infinite;
+  z-index: -2;
 }
 
-@keyframes moveBg {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-25%, -25%); }
-  100% { transform: translate(0,0); }
+@keyframes stars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-500px); }
 }
 
-/* Sections */
+/* SECTION */
 section {
   height: 100vh;
   display: flex;
@@ -53,58 +55,63 @@ section {
   align-items: center;
 }
 
-/* Glass Card */
+/* CARD */
 .card {
-  width: 320px;
+  width: 340px;
   padding: 30px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(34,197,94,0.5);
   text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease;
-  animation: float 4s ease-in-out infinite;
+  transition: transform 0.2s;
+  animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-20px); }
 }
 
 h1 {
   margin-bottom: 10px;
+  background: linear-gradient(45deg, #22c55e, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
-  opacity: 0.85;
+  opacity: 0.9;
   font-size: 0.95rem;
 }
 
+/* IMAGE */
+img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
 .btn {
   margin-top: 15px;
   padding: 10px 20px;
   border-radius: 25px;
   border: none;
-  background: linear-gradient(45deg, #22c55e, #4ade80);
+  background: linear-gradient(45deg, #22c55e, #38bdf8);
   color: black;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  transform: scale(1.1);
-}
-
-/* Title */
+/* TITLE */
 .title {
   position: fixed;
   top: 20px;
   left: 20px;
   font-weight: bold;
-  letter-spacing: 1px;
-  opacity: 0.8;
+  font-size: 1.1rem;
+  color: #38bdf8;
 }
 
 </style>
@@ -112,41 +119,46 @@ p {
 
 <body>
 
-<div class="title">💀 Digital Legacy Hub</div>
+<div class="title">🌌 Digital Legacy Hub</div>
 
 <section>
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
     <h1>Digital Life</h1>
-    <p>Your memories, accounts & assets deserve protection.</p>
+    <p>Your data, memories & identity live forever in the digital universe.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
     <h1>The Problem</h1>
-    <p>Families struggle to access digital data after death.</p>
+    <p>After death, digital assets become lost in space — inaccessible.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
     <h1>Your Assets</h1>
-    <p>Photos, crypto, files — everything in one place.</p>
+    <p>Store photos, crypto, accounts safely in one universe.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
     <h1>Secure Vault</h1>
-    <p>Encrypted & shared only with trusted people.</p>
+    <p>Encrypted protection stronger than anything on earth.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
     <h1>Legacy Transfer</h1>
-    <p>Give access when it matters most.</p>
-    <button class="btn" onclick="alert('Coming Soon 🚀')">Get Started</button>
+    <p>Pass your digital universe to loved ones seamlessly.</p>
+    <button class="btn" onclick="alert('Launching Soon 🚀')">Get Started</button>
   </div>
 </section>
 
@@ -154,8 +166,8 @@ p {
 const cards = document.querySelectorAll(".card");
 
 document.addEventListener("mousemove", (e) => {
-  let x = (window.innerWidth / 2 - e.pageX) / 35;
-  let y = (window.innerHeight / 2 - e.pageY) / 35;
+  let x = (window.innerWidth / 2 - e.pageX) / 40;
+  let y = (window.innerHeight / 2 - e.pageY) / 40;
 
   cards.forEach(card => {
     card.style.transform = rotateY(${x}deg) rotateX(${y}deg);

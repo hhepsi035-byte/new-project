@@ -6,12 +6,25 @@
 <title>Digital Legacy Hub</title>
 
 <style>
-  body {
+  * {
     margin: 0;
-    font-family: Arial;
-    background: #0f172a;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #1e3a8a);
+    background-size: 400% 400%;
+    animation: bg 10s ease infinite;
     color: white;
     overflow-x: hidden;
+  }
+
+  @keyframes bg {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
   }
 
   section {
@@ -19,37 +32,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    perspective: 1000px;
+    padding: 20px;
   }
 
   .card {
-    background: rgba(255,255,255,0.1);
+    width: 320px;
     padding: 30px;
     border-radius: 20px;
-backdrop-filter: blur(10px);
-    transform-style: preserve-3d;
-    transition: transform 0.2s;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     text-align: center;
-    width: 300px;
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
   }
 
   h1 {
-    font-size: 2rem;
+    margin-bottom: 10px;
   }
 
   p {
     opacity: 0.8;
+    font-size: 0.95rem;
   }
 
   .btn {
     margin-top: 15px;
     padding: 10px 20px;
+    border-radius: 25px;
     border: none;
-    background: #22c55e;
-    color: white;
-    border-radius: 20px;
+    background: linear-gradient(45deg, #22c55e, #4ade80);
+    color: black;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+  }
+
+  .title {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-weight: bold;
+    opacity: 0.7;
   }
 
 </style>
@@ -57,39 +85,41 @@ backdrop-filter: blur(10px);
 
 <body>
 
+<div class="title">Digital Legacy Hub</div>
+
 <section>
   <div class="card">
-    <h1>💀 Digital Legacy Hub</h1>
-    <p>Your digital life shouldn’t die with you.</p>
+    <h1>💀 Digital Legacy</h1>
+    <p>Your digital life shouldn’t become a burden.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
     <h1>⚠️ The Problem</h1>
-    <p>Families struggle to access lost accounts, photos & assets.</p>
+    <p>Photos, accounts & crypto become inaccessible after death.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
-    <h1>📂 Your Assets</h1>
-    <p>Store passwords, crypto, files & memories securely.</p>
+    <h1>📂 Manage Assets</h1>
+    <p>Store passwords, files, and memories securely.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
     <h1>🔐 Secure Vault</h1>
-    <p>Encrypted access for trusted people only.</p>
+    <p>Encrypted and shared only with trusted people.</p>
   </div>
 </section>
 
 <section>
   <div class="card">
-    <h1>👨‍👩‍👧 Legacy Transfer</h1>
-    <p>Give access when it matters most.</p>
-    <button class="btn" onclick="alert('Coming Soon 🚀')">Get Started</button>
+    <h1>👨‍👩‍👧 Transfer Legacy</h1>
+    <p>Give access when it truly matters.</p>
+    <button class="btn" onclick="alert('Future Feature 🚀')">Get Started</button>
   </div>
 </section>
 
@@ -97,8 +127,8 @@ backdrop-filter: blur(10px);
   const cards = document.querySelectorAll(".card");
 
   document.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.pageX) / 25;
-    let y = (window.innerHeight / 2 - e.pageY) / 25;
+    let x = (window.innerWidth / 2 - e.pageX) / 30;
+    let y = (window.innerHeight / 2 - e.pageY) / 30;
 
     cards.forEach(card => {
       card.style.transform = rotateY(${x}deg) rotateX(${y}deg);

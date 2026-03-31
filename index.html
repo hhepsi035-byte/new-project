@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Impressive Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #764ba2;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #764ba2;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🚀 Welcome</h1>
+    <p>This is your impressive GitHub website</p>
+    <button onclick="showMessage()">Click Me</button>
+  </div>
+
+  <script>
+    function showMessage() {
+      alert("🔥 You just created a cool website!");
+    }
+  </script>
+
+</body>
+</html>
